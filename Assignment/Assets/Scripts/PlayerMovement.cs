@@ -38,8 +38,7 @@ public class PlayerMovement : MonoBehaviour
         // check for jump
         if (Input.GetKeyDown("space"))
         {
-            Helper.SetVelocity(gameObject, 0, 10);
-
+            Helper.SetVelocity(gameObject, 0, 6);
         }
 
 
