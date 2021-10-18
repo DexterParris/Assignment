@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", true);
             Helper.FlipSprite(gameObject, true);
-            Helper.SetVelocity(character, -6, 0);
+            Helper.SetVelocity(character, -4, 0);
         }
 
         // check for moving right
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", false);
             Helper.FlipSprite(gameObject, false);    //flip sprite left
-            Helper.SetVelocity(character, 6, 0);
+            Helper.SetVelocity(character, 4, 0);
         }
 
     }
