@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 5613213154180640151}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 70f1bafea3b983740be55f2fe57ea814, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,7 +115,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5613213154180640151}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ac5d71420a55d584a8e50092c8a5ffd3, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5613213154180640151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9773139d3547d3440b2e2a02c45a0e5d, type: 3}
+  m_Script: {fileID: 11500000, guid: d6a08498eaa573c409b3a899c6e544e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerpos: 0
