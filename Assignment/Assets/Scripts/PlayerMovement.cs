@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         // check for jump
         if (Input.GetKeyDown("space"))
         {
-            Helper.SetVelocity(gameObject, 0, 6);
+            Helper.SetVelocity(gameObject, 0, 7);
         }
 
 
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             float xvel = 7;
             float yvel = 0;
 
-            Helper.MakeBullet(prefab, xpos + 1, ypos + 1, xvel, yvel, anim.GetBool("left")); //instantiate the object using the instantiation method in the helper.cs script
+            Helper.MakeBullet(prefab, xpos , ypos + 1, xvel, yvel, anim.GetBool("left")); //instantiate the object using the instantiation method in the helper.cs script
 
         }
     }

@@ -54,13 +54,13 @@ public class Helper : MonoBehaviour
         // set the direction of the instance based on the anim bool left
         if (left == true)
         {
-            xvel = -9;
+            xvel = -8;
             Helper.FlipSprite(instance, true);
 
         }
         else
         {
-            xvel = 9;
+            xvel = 8;
             Helper.FlipSprite(instance, false);
         }
 
