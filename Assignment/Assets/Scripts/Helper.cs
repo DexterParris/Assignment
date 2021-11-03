@@ -85,7 +85,6 @@ public class Helper : MonoBehaviour
 
         if (hit.collider != null)
         {
-
             if (hit.collider.tag == "Ground" || hit.collider.tag == "Enemy")
             {
                 IsGrounded = true;

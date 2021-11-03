@@ -46,8 +46,10 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMove()
     {
+        float yvelocity = rb.velocity.y;
         // stop player sliding when not pressing left or right
         anim.SetBool("Walk", false);
+        Helper.SetVelocity(gameObject, 0, yvelocity);
         // check for moving left
         if (Input.GetKey("a"))
         {
