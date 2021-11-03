@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     public GameObject prefab;
-    public GameObject character;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         float yvelocity = rb.velocity.y;
         float xvelocity = rb.velocity.x;
 
-        Helper.DoRayCollisionCheck(character, xpos, ypos);
+        Helper.DoRayCollisionCheck(gameObject, xpos, ypos);
        
 
         // check for jump
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             float xvel = 7;
             float yvel = 0;
 
-            Helper.MakeBullet(prefab, xpos , ypos + 1, xvel, yvel, anim.GetBool("left")); //instantiate the object using the instantiation method in the helper.cs script
+            Helper.MakeBullet(prefab, xpos , ypos + 1.3f, xvel, yvel, anim.GetBool("left")); //instantiate the object using the instantiation method in the helper.cs script
 
         }
     }

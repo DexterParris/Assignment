@@ -250,11 +250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5613213154180640136, guid: 012285e4d94adec46b05db70421c9852, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.9
+      value: 12.2
       objectReference: {fileID: 0}
     - target: {fileID: 5613213154180640136, guid: 012285e4d94adec46b05db70421c9852, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.79
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5613213154180640136, guid: 012285e4d94adec46b05db70421c9852, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1383,9 +1383,9 @@ GameObject:
   - component: {fileID: 1398403418}
   - component: {fileID: 1398403417}
   - component: {fileID: 1398403422}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,7 +1486,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8020143640844766479, guid: 3bb64f34448ec7147bb67bd686a23dbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -29,14 +29,13 @@ public class EnemyMovement : MonoBehaviour
     void DoMove()
     {
 
-        playerpos = GameObject.Find("Player").transform.position.x;
+        playerpos = GameObject.FindWithTag("Player").transform.position.x;
         enemypos = transform.position.x;
 
-        Vector2 velocity = rb.velocity;
         float distance = enemypos - playerpos;
 
         // stop player sliding when not pressing left or right
-        velocity.x = 0;
+        Helper.SetVelocity(gameObject, 0, rb.velocity.y);
         anim.SetBool("Walk", false);
         // check for moving left
         if (distance <10 && distance >1.5f)
@@ -57,7 +56,6 @@ public class EnemyMovement : MonoBehaviour
             Helper.SetVelocity(gameObject, 3, 0);
             distance = enemypos - playerpos;
         }
-        rb.velocity = velocity;
 
     }
 }

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6668212924029847742}
   - component: {fileID: 3425718100371845017}
   - component: {fileID: 3232539743762445014}
-  m_Layer: 0
+  - component: {fileID: 5509850766183004964}
+  m_Layer: 6
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +104,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -153,9 +154,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0054039955, y: -0.035470784}
+  m_Offset: {x: -0.0019478798, y: -0.026098132}
   serializedVersion: 2
-  m_Radius: 0.30573112
+  m_Radius: 0.3023293
+--- !u!114 &5509850766183004964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119544839335970904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176de160011bee144ac17820f753d3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125522074165262910
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8770659382192373777}
   - component: {fileID: 6838258562292089030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

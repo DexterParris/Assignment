@@ -72,7 +72,7 @@ public class Helper : MonoBehaviour
 
     public static void DoRayCollisionCheck(GameObject character, float xpos, float ypos)
     {
-        float rayLength = 0.2f;
+        float rayLength = 0.3f;
 
         Vector3 position = new Vector3(xpos, ypos, 0);
 
