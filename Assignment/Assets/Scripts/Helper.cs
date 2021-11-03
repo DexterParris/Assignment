@@ -29,7 +29,7 @@ public class Helper : MonoBehaviour
             return Right;
     }
 
-    public static void SetVelocity( GameObject obj, float xvelocity, float yvelocity )
+    public static void SetVelocity( GameObject obj, float xvelocity, float yvelocity)
     {
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
 
