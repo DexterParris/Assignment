@@ -10,7 +10,6 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     public float playerpos;
     public float enemypos;
-    public GameObject Enemy;
 
     void Start()
     {
@@ -45,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", true);
             Helper.FlipSprite(gameObject, true);
-            Helper.SetVelocity(Enemy, -3, 0);
+            Helper.SetVelocity(gameObject, -3, 0);
             distance = enemypos - playerpos;
         }
 
@@ -55,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", false);
             Helper.FlipSprite(gameObject, false);
-            velocity.x = 3;
+            Helper.SetVelocity(gameObject, 3, 0);
             distance = enemypos - playerpos;
         }
         rb.velocity = velocity;

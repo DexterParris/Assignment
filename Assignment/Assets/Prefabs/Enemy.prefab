@@ -157,3 +157,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerpos: 0
   enemypos: 0
+  Enemy: {fileID: 5613213154180640151}

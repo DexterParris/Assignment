@@ -26,22 +26,22 @@ public class PlayerMovement : MonoBehaviour
 
     void DoJump()
     { 
-        bool IsGrounded = false;
         float xpos = transform.position.x;
         float ypos = transform.position.y;
         float yvelocity = rb.velocity.y;
         float xvelocity = rb.velocity.x;
 
-        Helper.DoRayCollisionCheck(character, xpos, ypos, IsGrounded);
+        Helper.DoRayCollisionCheck(character, xpos, ypos);
        
 
         // check for jump
         if (Input.GetKeyDown("space"))
         {
-            Helper.SetVelocity(gameObject, 0, 7);
+            if(Helper.IsGrounded == true)
+            {
+                Helper.SetVelocity(gameObject, 0, 7);
+            }
         }
-
-
     }
 
     void DoMove()
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", true);
             Helper.FlipSprite(gameObject, true);
-            Helper.SetVelocity(character, -4, 0);
+            Helper.SetVelocity(gameObject, -4, 0);
         }
 
         // check for moving right
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("left", false);
             Helper.FlipSprite(gameObject, false);    //flip sprite left
-            Helper.SetVelocity(character, 4, 0);
+            Helper.SetVelocity(gameObject, 4, 0);
         }
 
     }

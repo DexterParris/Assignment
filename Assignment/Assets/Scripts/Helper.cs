@@ -5,6 +5,7 @@ using static Globals;
 
 public class Helper : MonoBehaviour
 {
+    public static bool IsGrounded = false;
     public static void FlipSprite( GameObject obj, bool left)
     {
         if ( left == true )
@@ -28,9 +29,9 @@ public class Helper : MonoBehaviour
             return Right;
     }
 
-    public static void SetVelocity( GameObject character, float xvelocity, float yvelocity )
+    public static void SetVelocity( GameObject obj, float xvelocity, float yvelocity )
     {
-        Rigidbody2D rb = character.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
 
         if( xvelocity == 0 )
         {
@@ -69,7 +70,7 @@ public class Helper : MonoBehaviour
         rb.velocity = new Vector3( xvel, yvel, 0 );   
     }
 
-    public static void DoRayCollisionCheck(GameObject character, float xpos, float ypos, bool IsGrounded)
+    public static void DoRayCollisionCheck(GameObject character, float xpos, float ypos)
     {
         float rayLength = 0.2f;
 
@@ -78,17 +79,17 @@ public class Helper : MonoBehaviour
         //cast a ray downward of length 1
         RaycastHit2D hit = Physics2D.Raycast(position, -Vector2.up, rayLength);
 
-        Color hitColor = Color.white;
+        Color hitColor = Color.red;
 
         IsGrounded = false;
+
         if (hit.collider != null)
         {
 
-            
-            if (hit.collider.tag == "Ground")
+            if (hit.collider.tag == "Ground" || hit.collider.tag == "Enemy")
             {
                 IsGrounded = true;
-                hitColor = Color.red;
+                hitColor = Color.green;
             }
 
         }
