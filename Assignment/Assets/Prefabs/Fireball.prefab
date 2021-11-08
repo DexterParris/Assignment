@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3425718100371845017}
   - component: {fileID: 3232539743762445014}
   - component: {fileID: 5509850766183004964}
+  - component: {fileID: 4310912836498858618}
   m_Layer: 6
   m_Name: Fireball
   m_TagString: Bullet
@@ -169,6 +170,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176de160011bee144ac17820f753d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &4310912836498858618
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119544839335970904}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00073483586, y: -0.030863404}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6308028, y: 0.62933326}
+  m_EdgeRadius: 0
 --- !u!1 &2125522074165262910
 GameObject:
   m_ObjectHideFlags: 0

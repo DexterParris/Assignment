@@ -58,4 +58,13 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Bullet")
+        {
+            Destroy(gameObject, 0.1f);
+        }
+    }
+
 }
