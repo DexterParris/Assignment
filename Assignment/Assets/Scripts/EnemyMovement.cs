@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public int EnemyHealth = 2;
     private Rigidbody2D rb;
     private Animator anim;
     // Start is called before the first frame update
@@ -63,7 +64,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            Destroy(gameObject, 0.1f);
+            EnemyHealth = EnemyHealth - 1;
+
+            if (EnemyHealth < 0 || EnemyHealth == 0)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+            
         }
     }
 
