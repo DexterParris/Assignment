@@ -9,6 +9,10 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(Player.position.x + offset.x, Player.position.y + offset.y, offset.z); // Make the camera follow the player as they move, but not when the rotate
+        if(Helper.PlayerHealth > 0) 
+        {
+            transform.position = new Vector3(Player.position.x + offset.x, Player.position.y + offset.y, offset.z); // Make the camera follow the player as they move, but not when the rotate
+        }
+        
     }
 }

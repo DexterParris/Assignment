@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Globals;
+using UnityEngine.SceneManagement;
 
 public class Helper : MonoBehaviour
 {
     public static bool IsGrounded = false;
+    public static float PlayerHealth = 2f;
+
     public static void FlipSprite( GameObject obj, bool left)
     {
         if ( left == true )
@@ -99,6 +102,20 @@ public class Helper : MonoBehaviour
 
     }
 
+    public static void HealthSystem(float damage, float healing)
+    {
+        PlayerHealth = PlayerHealth + healing;
+        PlayerHealth = PlayerHealth - damage;
+        if(PlayerHealth > 3)
+        {
+            PlayerHealth = 3;
+        }
+        else if(PlayerHealth < 0)
+        {
+            PlayerHealth = 0;
+        }
+
+    }   
 
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         DoJump();
         DoMove();
         DoShoot();
+        DoHealthCheck();
     }
 
     void DoJump()
@@ -83,6 +84,14 @@ public class PlayerMovement : MonoBehaviour
 
             Helper.MakeBullet(prefab, xpos , ypos + 1.3f, xvel, yvel, anim.GetBool("left")); //instantiate the object using the instantiation method in the helper.cs script
 
+        }
+    }
+
+    void DoHealthCheck()
+    {
+        if(Helper.PlayerHealth == 0)
+        {
+            Destroy(gameObject,0.5f);
         }
     }
 
