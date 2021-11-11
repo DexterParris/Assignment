@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.tag == "Player")
+        {
+            Helper.HealthSystem(0,4);
+            Destroy(gameObject,0.2f);
+            
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

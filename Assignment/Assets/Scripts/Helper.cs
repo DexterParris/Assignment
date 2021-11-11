@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Helper : MonoBehaviour
 {
     public static bool IsGrounded = false;
-    public static float PlayerHealth = 2f;
+    public static float PlayerHealth = 3;
 
     public static void FlipSprite( GameObject obj, bool left)
     {
@@ -114,6 +114,7 @@ public class Helper : MonoBehaviour
         {
             PlayerHealth = 0;
         }
+
 
     }   
 

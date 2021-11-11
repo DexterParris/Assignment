@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Helper.PlayerHealth == 0)
         {
-            Destroy(gameObject,0.5f);
+            Destroy(gameObject,0f);
         }
     }
 
