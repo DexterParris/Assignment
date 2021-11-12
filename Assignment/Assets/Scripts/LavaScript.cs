@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LavaScript : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class LavaScript : MonoBehaviour
         if (other.tag == "Player")
         {
             audioData.Play();
-            Helper.HealthSystem(3,0);
-            
+            Helper.PlayerHealth = 0;
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+
         }
     }
 }
