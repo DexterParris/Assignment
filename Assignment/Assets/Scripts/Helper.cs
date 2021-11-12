@@ -106,15 +106,20 @@ public class Helper : MonoBehaviour
     {
         PlayerHealth = PlayerHealth + healing;
         PlayerHealth = PlayerHealth - damage;
-        if(PlayerHealth > 3)
+        if (PlayerHealth > 3)
         {
             PlayerHealth = 3;
         }
-        else if(PlayerHealth < 0)
+        else if (PlayerHealth < 0)
         {
             PlayerHealth = 0;
         }
-
+        else if (PlayerHealth == 0)
+        {
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+            PlayerHealth = 3;
+        }
 
     }   
 
