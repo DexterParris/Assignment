@@ -118,7 +118,7 @@ public class Helper : MonoBehaviour
         {
             Scene thisScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(thisScene.name);
-            PlayerHealth = 3;
+            
         }
 
     }   
