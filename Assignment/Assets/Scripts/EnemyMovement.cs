@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    AudioSource audioData;
     public int EnemyHealth = 2;
     private Rigidbody2D rb;
     private Animator anim;
@@ -14,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -71,6 +73,12 @@ public class EnemyMovement : MonoBehaviour
                 Destroy(gameObject, 0.1f);
             }
             
+        }
+        else if (other.tag == "Player")
+        {
+            audioData.Play();
+            Helper.HealthSystem(1, 0);
+
         }
     }
 
