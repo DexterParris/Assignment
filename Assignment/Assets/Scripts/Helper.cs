@@ -38,12 +38,12 @@ public class Helper : MonoBehaviour
 
         if( xvelocity == 0 )
         {
-            rb.velocity = new Vector2(rb.velocity.x, yvelocity);
+            rb.velocity = new Vector2(rb.velocity.x, yvelocity * Time.deltaTime);
         }
 
         if (yvelocity == 0)
         {
-            rb.velocity = new Vector2(xvelocity, rb.velocity.y);
+            rb.velocity = new Vector2(xvelocity, rb.velocity.y * Time.deltaTime);
         }
 
 
