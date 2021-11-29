@@ -20,7 +20,7 @@ public class KO : MonoBehaviour
 
         if (other != null)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Bullet")
             {
                 bonk.Play();
                 if(system1.isStopped) system1.Play();
