@@ -6,8 +6,14 @@ public class EnemyAI : MonoBehaviour
 {
     private Rigidbody rb;
     public int state = 0;
-    public float walktimer = 10;
+    public float walktimer = 3f;
     // Start is called before the first frame update
+
+    IEnumerator wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
     void Start()
     {
        rb = GetComponent<Rigidbody>();
@@ -23,6 +29,7 @@ public class EnemyAI : MonoBehaviour
         else if (state == 1)
         {
             moving();
+            rb.freezeRotation = true;
         }
         else if (state == 2)
         {
@@ -34,34 +41,33 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        if (col != null)
+        if (col != null && col.gameObject.tag == "Player")
         {
-            if (col.gameObject.tag == "Player")
-            {
-                state = 1;
-            }
+            state = 1;
         }
 
         
     }
     void idle()
     {
-        transform.Rotate(0, 5, 0 * Time.deltaTime);
+        transform.Rotate(0, 2, 0 * Time.deltaTime);
     }
 
     void moving()
     {
+        
+
         if (walktimer > 0)
         {
             walktimer -= Time.deltaTime;
-            rb.AddForce(transform.forward * 20 * Time.deltaTime);
+            transform.position += transform.right * Time.deltaTime *2;
         }
         else
         {
             state = 0;
-
+            walktimer = 3f;
         }
     }
     void attacking()
