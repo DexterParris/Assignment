@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    enum Enemystates
+    {
+        Idle,
+        Walk,
+        Jump,
+        Attack
+    }
+
     private Rigidbody rb;
     private Animator animator;
-    public int state = 0;
+    Enemystates state = Enemystates.Idle;
     public float walktimer = 3f;
     public int jumpcheck;
     // Start is called before the first frame update
@@ -27,25 +35,25 @@ public class EnemyAI : MonoBehaviour
     {
         switch (state)
         {
-            case 0:
+            case Enemystates.Idle:
                 idle();
                 break;
 
-            case 1:
+            case Enemystates.Walk:
                 moving();
                 rb.freezeRotation = true;
                 break;
 
-            case 2:
+            case Enemystates.Jump:
                 jumping();
                 break;
 
-            case 3:
+            case Enemystates.Attack:
                 attacking();
                 break;
 
             default:
-                state = 0;
+                state = Enemystates.Idle;
                 break;
         }
 
@@ -57,7 +65,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (col != null && col.gameObject.tag == "Player")
         {
-            state = 1;
+            state = Enemystates.Walk;
         }
 
         
@@ -66,7 +74,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (jumpcheck > 5)
         {
-            state = 2;
+            state = Enemystates.Jump;
         }
         else
         {
@@ -87,7 +95,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             
-            state = 0;
+            state = Enemystates.Idle;
             walktimer = 3f;
         }
     }
@@ -95,7 +103,7 @@ public class EnemyAI : MonoBehaviour
     void jumping()
     {
         rb.AddForce(transform.up * 600* Time.deltaTime);
-        state = 0;
+        state = Enemystates.Idle;
     }
 
     void attacking()
