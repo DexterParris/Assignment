@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     private Rigidbody rb;
+    private Animator animator;
     public int state = 0;
     public float walktimer = 3f;
+    public int jumpcheck;
     // Start is called before the first frame update
 
     IEnumerator wait(float time)
@@ -16,29 +18,39 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+       animator = GetComponent<Animator>();
        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (state == 0)
+        switch (state)
         {
-            idle();
+            case 0:
+                idle();
+                break;
+
+            case 1:
+                moving();
+                rb.freezeRotation = true;
+                break;
+
+            case 2:
+                jumping();
+                break;
+
+            case 3:
+                attacking();
+                break;
+
+            default:
+                state = 0;
+                break;
         }
-        else if (state == 1)
-        {
-            moving();
-            rb.freezeRotation = true;
-        }
-        else if (state == 2)
-        {
-            attacking();
-        }
-        else
-        {
-            state = 0;
-        }
+
+
+
     }
 
     void OnTriggerEnter(Collider col)
@@ -52,13 +64,21 @@ public class EnemyAI : MonoBehaviour
     }
     void idle()
     {
-        transform.Rotate(0, 2, 0 * Time.deltaTime);
+        if (jumpcheck > 5)
+        {
+            state = 2;
+        }
+        else
+        {
+            animator.Play("Enemy_Idle");
+            transform.Rotate(0, 2, 0 * Time.deltaTime);
+        }
+        
     }
 
     void moving()
     {
-        
-
+        animator.Play("Enemy_Walk");
         if (walktimer > 0)
         {
             walktimer -= Time.deltaTime;
@@ -66,12 +86,27 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            
             state = 0;
             walktimer = 3f;
         }
     }
+
+    void jumping()
+    {
+        rb.AddForce(transform.up * 600* Time.deltaTime);
+        state = 0;
+    }
+
     void attacking()
     {
+        animator.Play("Enemy_Attack");
+    }
 
+    void OnGUI()
+    {
+        string content = walktimer.ToString();
+        string stateText = state.ToString();
+        GUILayout.Label($"<color='black'><size=40>State= {stateText}\n{content}</size></color>");
     }
 }
